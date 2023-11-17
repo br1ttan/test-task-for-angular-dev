@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { finalize } from 'rxjs/operators';
+import { delay, finalize } from 'rxjs/operators';
 
 import { QuoteService } from './quote.service';
 
@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     this.quoteService
       .getRandomQuote({ category: 'dev' })
       .pipe(
+        delay(1000),
         finalize(() => {
           this.isLoading = false;
         })
