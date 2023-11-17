@@ -1,1 +1,61 @@
-<p>projects works!</p>
+<header class="header">
+  <div class="container">
+    <div class="header-top row justify-content-between">
+      <a class="logo" [routerLink]="'/'">LOGO</a>
+
+      <nav class="menu">
+        <ul class="menu-items d-flex">
+          <a *ngFor="let item of [1, 2, 3, 4]" class="menu-items__link">
+            <li class="item">link{{ item }}</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+    <div class="header-body row justify-content-between">
+      <div class="introduction-block">
+        <h2 class="introduction-block__title">Intro</h2>
+        <p class="introduction-block__text">
+          Some introduction
+          <br />lines about the <br />website or company
+        </p>
+      </div>
+
+      <div class="square col-7"></div>
+    </div>
+  </div>
+</header>
+
+<section class="main">
+  <div class="container">
+    <div class="circles d-flex justify-content-center">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+
+    <div class="services">
+      <div *ngFor="let item of [1, 2, 3, 4, 5, 6]" class="service">
+        <span class="service-text">Services</span>
+      </div>
+    </div>
+
+    <div class="twitter-feed">
+      <span class="twitter-feed__text">Twitter Feed</span>
+    </div>
+  </div>
+
+  <div class="container">
+    {{ projectObj | json }}
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <ul class="menu-items d-flex">
+      <a *ngFor="let item of [1, 2, 3, 4]" class="menu-items__link">
+        <li class="item">link{{ item }}</li>
+      </a>
+    </ul>
+  </div>
+</footer>
